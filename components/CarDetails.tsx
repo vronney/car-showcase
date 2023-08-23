@@ -5,7 +5,6 @@ import React from "react";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { generate } from "rxjs";
 import { generateCarImageUrl } from "@/utils";
 
 interface CarDetailsProps {
