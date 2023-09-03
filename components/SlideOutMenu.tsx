@@ -9,17 +9,15 @@ interface SlideOutMenuProps {
 const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-4/5 h-full bg-white transition-all ease-in-out duration-300 z-50 ${
-        isOpen ? "left-0" : "-left-full"
+      className={` ${
+        isOpen
+          ? "left-0 fixed top-0 w-4/5 h-full bg-white transition-all ease-in-out duration-300 z-50"
+          : "sm:hidden -left-full"
       }`}
     >
       <div className="menu-content">
         <button
-          className={`${
-            isOpen
-              ? "absolute top-4 right-2"
-              : "sm:hidden flex flex-col gap-1 h-6 w-6 mr-6"
-          }`}
+          className={`${isOpen ? "absolute top-4 right-2" : "hidden"}`}
           onClick={toggleMenu}
         >
           <div
@@ -34,7 +32,11 @@ const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
             }`}
           ></div>
         </button>
-        <div className="menu-links spacee-y-4 flex flex-col ml-4 mt-4 space-y-4">
+        <div
+          className={`${
+            isOpen ? "menu-links flex flex-col ml-4 mt-4 space-y-4" : "hidden"
+          }`}
+        >
           <Link href="/cars">Cars</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
