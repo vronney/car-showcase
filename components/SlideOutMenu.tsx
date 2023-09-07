@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SlideOutMenuProps {
   isOpen: boolean;
@@ -15,7 +16,23 @@ const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
           : "sm:hidden -left-full"
       }`}
     >
-      <div className="menu-content">
+      <div className="menu-content h-full mt-4">
+        <Link href="/" className="flex justify-start ml-4 items-center">
+          <Image
+            src="/logo.svg"
+            alt="Car Hub Logo"
+            width={118}
+            height={18}
+            className={`${isOpen ? "object-contain" : "hidden"}`}
+          />
+        </Link>
+
+        <div className={`hidden sm:flex gap-12 ${isOpen && "opacity-50"}`}>
+          <Link href="/cars">Cars</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+
         <button
           className={`${isOpen ? "absolute top-4 right-2" : "hidden"}`}
           onClick={toggleMenu}
@@ -40,6 +57,18 @@ const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
           <Link href="/cars">Cars</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
+        </div>
+        <div className="flex justify-items-center w-full absolute bottom-0">
+          <button
+            type="button"
+            className={`${
+              isOpen
+                ? "mb-4 rounded-full bg-primary-blue text-white px-4 py-2 mx-auto"
+                : "hidden"
+            }`}
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </div>
