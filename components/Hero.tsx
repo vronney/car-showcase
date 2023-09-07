@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
-
+import { useRouter } from "next/navigation";
 const Hero = () => {
-  const handleScroll = () => {};
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/cars");
+  };
 
   return (
     <div className="hero">
@@ -21,7 +24,7 @@ const Hero = () => {
         <CustomButton
           title="Explore Cars"
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
-          handleClick={handleScroll}
+          handleClick={handleClick}
         />
       </div>
       <div className="hero__image-container">

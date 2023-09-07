@@ -34,7 +34,7 @@ const Navbar = () => {
         onClick={toggleMenu}
       ></div>
 
-      <header className="w-full absolute z-10">
+      <header className="w-full z-10">
         <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4">
           <button
             className="sm:hidden flex flex-col gap-1 h-6 w-6 mr-6"

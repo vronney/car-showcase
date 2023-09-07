@@ -16,56 +16,37 @@ const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
           : "sm:hidden -left-full"
       }`}
     >
-      <div className="menu-content h-full mt-4">
+      <div className={`${isOpen ? "menu-content h-full mt-4" : "hidden"}`}>
         <Link href="/" className="flex justify-start ml-4 items-center">
           <Image
             src="/logo.svg"
             alt="Car Hub Logo"
             width={118}
             height={18}
-            className={`${isOpen ? "object-contain" : "hidden"}`}
+            className="object-contain"
           />
         </Link>
 
-        <div className={`hidden sm:flex gap-12 ${isOpen && "opacity-50"}`}>
-          <Link href="/cars">Cars</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </div>
-
-        <button
-          className={`${isOpen ? "absolute top-4 right-2" : "hidden"}`}
-          onClick={toggleMenu}
-        >
-          <div
-            className={`h-1 w-6 bg-black ${
-              isOpen && "rotate-45 translate-y-1.5"
-            }`}
-          ></div>
+        <button className="absolute top-4 right-2" onClick={toggleMenu}>
+          <div className="h-1 w-6 bg-black rotate-45 translate-y-1.5"></div>
           <div className={`h-1 w-6 bg-black ${isOpen && "opacity-0"}`}></div>
-          <div
-            className={`h-1 w-6 bg-black ${
-              isOpen && "-rotate-45 -translate-y-0.5"
-            }`}
-          ></div>
+          <div className="h-1 w-6 bg-black -rotate-45 -translate-y-0.5"></div>
         </button>
-        <div
-          className={`${
-            isOpen ? "menu-links flex flex-col ml-4 mt-4 space-y-4" : "hidden"
-          }`}
-        >
-          <Link href="/cars">Cars</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <div className="menu-links flex flex-col ml-4 mt-6 space-y-4">
+          <Link href="/cars" className="text-lg" onClick={toggleMenu}>
+            Cars
+          </Link>
+          <Link href="/about" className="text-lg">
+            About
+          </Link>
+          <Link href="/contact" className="text-lg">
+            Contact
+          </Link>
         </div>
         <div className="flex justify-items-center w-full absolute bottom-0">
           <button
             type="button"
-            className={`${
-              isOpen
-                ? "mb-4 rounded-full bg-primary-blue text-white px-4 py-2 mx-auto"
-                : "hidden"
-            }`}
+            className="mb-4 rounded-full bg-primary-blue text-white px-4 py-2 mx-auto"
           >
             Sign In
           </button>
