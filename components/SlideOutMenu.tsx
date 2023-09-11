@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface SlideOutMenuProps {
   isOpen: boolean;
@@ -8,6 +9,12 @@ interface SlideOutMenuProps {
 }
 
 const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
+  const pathname = usePathname();
+
+  const isCarPage = pathname === "/cars";
+  const isAboutPage = pathname === "/about";
+  const isContactPage = pathname === "/contact";
+
   return (
     <div
       className={` ${
@@ -33,14 +40,18 @@ const SlideOutMenu = ({ isOpen, toggleMenu }: SlideOutMenuProps) => {
           <div className="h-1 w-6 bg-black -rotate-45 -translate-y-0.5"></div>
         </button>
         <div className="menu-links flex flex-col ml-4 mt-6 space-y-4">
-          <Link href="/cars" className="text-lg" onClick={toggleMenu}>
-            Cars
+          <Link
+            href={isCarPage ? "/" : "/cars"}
+            className="text-lg"
+            onClick={toggleMenu}
+          >
+            {isCarPage ? "Home" : "Cars"}
           </Link>
-          <Link href="/about" className="text-lg">
-            About
+          <Link href={isAboutPage ? "/" : "/about"} className="text-lg">
+            {isAboutPage ? "Home" : "About"}
           </Link>
-          <Link href="/contact" className="text-lg">
-            Contact
+          <Link href={isContactPage ? "/" : "/contact"} className="text-lg">
+            {isContactPage ? "Home" : "Contact"}
           </Link>
         </div>
         <div className="flex justify-items-center w-full absolute bottom-0">

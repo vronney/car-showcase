@@ -9,6 +9,7 @@ import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
 import ShowMore from "./ShowMore";
 import SlideOutMenu from "./SlideOutMenu";
+import WelcomeWrap from "./WelcomeWrap";
 
 export {
   Hero,
@@ -22,4 +23,5 @@ export {
   CarCard,
   CarDetails,
   ShowMore,
+  WelcomeWrap,
 };

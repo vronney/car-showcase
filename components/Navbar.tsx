@@ -6,8 +6,14 @@ import Image from "next/image";
 
 import CustomButton from "./CustomButton";
 import SlideOutMenu from "./SlideOutMenu";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const isCarPage = pathname === "/cars";
+  const isAboutPage = pathname === "/about";
+  const isContactPage = pathname === "/contact";
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
@@ -55,9 +61,15 @@ const Navbar = () => {
           </Link>
 
           <div className={`hidden sm:flex gap-12 ${menuOpen && "opacity-50"}`}>
-            <Link href="/cars">Cars</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href={isCarPage ? "/" : "/cars"}>
+              {isCarPage ? "Home" : "Cars"}
+            </Link>
+            <Link href={isAboutPage ? "/" : "/about"}>
+              {isAboutPage ? "Home" : "About"}
+            </Link>
+            <Link href={isContactPage ? "/" : "/contact"}>
+              {isContactPage ? "Home" : "Contact"}
+            </Link>
           </div>
 
           <CustomButton
