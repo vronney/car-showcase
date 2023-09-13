@@ -45,7 +45,7 @@ const WelcomeWrap = () => {
             />
           </div>
         </div>
-        <div className="text-justify order-last flex-1 mb-4 p-[10px] uppercase sm:text-left sm:order-1 sm:w-1/3">
+        <div className="text-justify order-last flex-1 mb-4 p-[10px] uppercase bg-primary-blue text-white sm:text-left sm:order-1 sm:w-1/3">
           <div className="bus_hours">
             <h2 className="flex justify-center sm:justify-start">
               Business Hours
