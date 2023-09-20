@@ -5,7 +5,6 @@ export default function Home() {
     <main className="overflow-hidden">
       <Hero />
       <WelcomeWrap />
-      <WhySection />
     </main>
   );
 }

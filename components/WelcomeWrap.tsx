@@ -3,6 +3,7 @@
 import React from "react";
 import { CustomButton } from ".";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const WelcomeWrap = () => {
   const router = useRouter();
@@ -11,14 +12,22 @@ const WelcomeWrap = () => {
   };
 
   return (
-    <section className="flex flex-col border-t mt-5 border-grey-100 text-black-100 relative p-4 justify-center sm:px-16">
-      <div className="flex flex-col text-center my-4">
+    <section className="flex flex-col border-t mt-5 border-grey-100 text-black-100 font-extrabold relative p-4 justify-center sm:px-16">
+      <div className="absolute left-0 w-full h-full xl:h-full z-0 opacity-60">
+        <Image
+          src="/dealership_image.png"
+          alt="dealership"
+          fill
+          className="object-cover sm:object-fill md:object-cover lg:object-fill xl:object-top"
+        />
+      </div>
+      <div className="flex flex-col text-center my-4 z-10">
         <h1 className="text-2xl flex flex-col uppercase">
           <span className="text-base">Welcome to</span>
           <span className="text-[#3b3c98] font-bold">CarHub Dealership</span>
         </h1>
       </div>
-      <div className="flex flex-col flex-wrap justify-between sm:flex-row">
+      <div className="flex flex-col flex-wrap justify-between sm:flex-row z-10">
         <div className="text-justify order-2 flex-1 mb-4 p-[10px] sm:text-left sm:w-1/3">
           <p>
             Welcome to CarHub Dealership, home of the best used cars in San
