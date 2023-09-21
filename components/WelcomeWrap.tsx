@@ -12,7 +12,7 @@ const WelcomeWrap = () => {
   };
 
   return (
-    <section className="flex flex-col border-t mt-5 border-grey-100 text-black-100 font-extrabold relative p-4 justify-center sm:px-16">
+    <section className="flex flex-col border-t mt-5 border-grey-100 text-black-100 font-extrabold relative p-4 justify-center sm:px-16 max-w-[1440px] mx-auto">
       <div className="absolute left-0 w-full h-full xl:h-full z-0 opacity-60">
         <Image
           src="/dealership_image.png"
