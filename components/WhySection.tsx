@@ -51,13 +51,13 @@ const WhySection = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center flex-wrap content-center w-full sm:w-[50%] h-full relative sm:absolute sm:right-0 order-2 lg:rotate-[4deg] padding-x sm:p-4 md:object-cover">
+      <div className="flex justify-center flex-wrap content-center w-full sm:w-[50%] h-full relative sm:absolute sm:right-0 order-2 lg:rotate-[4deg] padding-x sm:p-4">
         <Image
           src={images[currentImageIndex]}
           alt={`customer-${currentImageIndex}`}
           width={500}
           height={500}
-          className="mx-2 mt-8 border-8 border-[#3b3c98] sm:mt-0 md:h-full"
+          className="mx-2 mt-8 border-8 border-[#3b3c98] object-cover lg:object-fill sm:mt-0 md:h-full"
         />
       </div>
     </section>
